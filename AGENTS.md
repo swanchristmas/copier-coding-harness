@@ -1,29 +1,16 @@
 # AGENTS.md
 
-This file is the executable contract boundary for local coding agents: keep only rules that constrain read/change/decision/verification behavior, and move project facts, rationale, and plans elsewhere.
+This repository preserves the retirement boundary for the former Copier coding-harness template.
 
-## Context precedence
+## Repository invariants
 
-When instructions conflict, follow this priority: user prompt > AGENTS.md > local code comments > repository docs, and report back the mismatch.
+- [`v0.4.4`](https://github.com/agentic-tend/copier-coding-harness/tree/v0.4.4) is the last usable template revision.
+- Do not restore generator code, publish successor releases, or add generic agent policy here.
+- Keep committed project content limited to `README.md`, `AGENTS.md`, and `LICENSE`.
+- Keep migration links aligned with the canonical `agentic-tend/skills` and `agentic-tend/.github` documents.
+- Repository archival is a maintainer-owned external action.
 
-## Project governance
+## Validation
 
-Read the relevant durable contract before working in its area:
-
-- [development.md](decisions/development.md): roles, uncertainty routing, and workflow change control;
-- [implementation-policy.md](decisions/implementation-policy.md): topology evolution, complexity boundaries, and redesign evidence;
-- [testing-policy.md](decisions/testing-policy.md): public behavior and independent acceptance evidence;
-- [documentation-style.md](decisions/documentation-style.md): documentation ownership and authoring rules;
-- [delivery.md](decisions/delivery.md): completion, validation, reporting, and repository actions.
-
-Do not modify project scope, dependencies, or public contracts without explicit maintainer approval.
-
-## Core boundaries
-
-Contract precedes implementation; "why" precedes "how".
-
-- do not weaken tests, oracles, or acceptance thresholds to make an implementation pass;
-- the diff is limited to the requested scope;
-- do not commit, push, or open pull requests unless explicitly requested.
-
-Complete work according to [delivery.md](decisions/delivery.md), including validation and reporting requirements.
+- Run `git diff --check`.
+- Verify the three-file boundary and every changed Markdown link.
